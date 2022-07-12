@@ -2,10 +2,11 @@ import { Children } from 'react';
 export interface GameState {
    antimatter: number;
    tickspeedPrice: number;
-   tickspeedDeceaseRate: number,
+   tickspeedDeceaseRate: number;
    resetGameCounter: number;
    galaxyCounter: number;
    lastSavedTime: number;
+   showGameSavedNotification: boolean;
    dims: Dim[];
 }
 
@@ -20,6 +21,6 @@ export interface Dim {
 export type DimProps = {
    nthDim: number;
    gs: GameState;
-   setGameState: (fn: (gameState: GameState) => void) => void;
+   dispatch: Function;
    children: string;
 };
